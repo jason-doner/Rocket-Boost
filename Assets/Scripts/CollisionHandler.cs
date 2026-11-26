@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
@@ -12,15 +13,21 @@ public class CollisionHandler : MonoBehaviour
     AudioSource audioSource;
 
     bool isControllable = true;
+    bool isCollidable = true;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        RespondToDebugKeys();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if (!isControllable) { return; }
+        if (!isControllable || !isCollidable) { return; }
 
         switch (collision.gameObject.tag)
         {
@@ -36,20 +43,20 @@ public class CollisionHandler : MonoBehaviour
         }
     }
 
-    void DisableMovement()
+    private void DisableMovement()
     {
         GetComponent<Movement>().enabled = false;
         audioSource.Stop();
         isControllable = false;
     }
 
-    void LoadNextLevel()
+    private void LoadNextLevel()
     {
         int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadScene(nextScene % SceneManager.sceneCountInBuildSettings);
     }
 
-    void StartSuccessSequence()
+    private void StartSuccessSequence()
     {
         successParticles.Play();
         DisableMovement();
@@ -57,7 +64,7 @@ public class CollisionHandler : MonoBehaviour
         Invoke("LoadNextLevel", levelLoadDelay);
     }
 
-    void ReloadLevel()
+    private void ReloadLevel()
     {
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene);
@@ -69,5 +76,18 @@ public class CollisionHandler : MonoBehaviour
         DisableMovement();
         audioSource.PlayOneShot(crashSFX);
         Invoke("ReloadLevel", levelLoadDelay);
+    }
+
+    private void RespondToDebugKeys()
+    {
+        if (Keyboard.current.lKey.wasPressedThisFrame)
+        {
+            LoadNextLevel();
+        }
+        else if (Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            Debug.Log("c key was pressed.");
+            isCollidable = !isCollidable;
+        }
     }
 }

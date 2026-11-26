@@ -918,10 +918,6 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3293094252823836195, guid: 211abc8c47707624ab0bcc31cad06c80, type: 3}
-      propertyPath: m_Constraints
-      value: 120
-      objectReference: {fileID: 0}
     - target: {fileID: 5780349796087214275, guid: 211abc8c47707624ab0bcc31cad06c80, type: 3}
       propertyPath: m_Name
       value: Player Rocket
