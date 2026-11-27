@@ -329,7 +329,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08248053, y: 0, z: 0, w: 0.9965927}
-  m_LocalPosition: {x: -25.3, y: 5.3659883, z: -14.795908}
+  m_LocalPosition: {x: -25, y: 6.1879807, z: -19.727879}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -972,7 +972,7 @@ Transform:
   m_GameObject: {fileID: 2025752384}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08248053, y: 0, z: 0, w: 0.9965927}
-  m_LocalPosition: {x: -25.3, y: 5.3659883, z: -14.795908}
+  m_LocalPosition: {x: -25, y: 6.1879807, z: -19.727879}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -990,20 +990,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886251e9a18ece04ea8e61686c173e1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachinePositionComposer
-  CameraDistance: 15
+  CameraDistance: 20
   DeadZoneDepth: 0
   Composition:
-    ScreenPosition: {x: 0.000000007450581, y: 0.00000017881393}
+    ScreenPosition: {x: 0, y: 0}
     DeadZone:
       Enabled: 1
-      Size: {x: 0.14639874, y: 0.27142864}
+      Size: {x: 0.1, y: 0.15}
     HardLimits:
       Enabled: 1
-      Size: {x: 0.34438926, y: 0.5976196}
+      Size: {x: 0.1723087, y: 0.2685399}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
   TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 1, y: 1, z: 1}
+  Damping: {x: 0.25, y: 0.25, z: 0.25}
   Lookahead:
     Enabled: 0
     Time: 0
@@ -1262,7 +1262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6479100537271140555, guid: 211abc8c47707624ab0bcc31cad06c80, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.3
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 6479100537271140555, guid: 211abc8c47707624ab0bcc31cad06c80, type: 3}
       propertyPath: m_LocalPosition.y

@@ -283,8 +283,8 @@ MonoBehaviour:
       m_Flags: 8
     m_Flags: 0
     m_Priority: 0
-  thrustStrength: 2000
-  rotationStrength: 125
+  thrustStrength: 2500
+  rotationStrength: 200
   mainEngineSFX: {fileID: 8300000, guid: 2b439e057e115764197350f5db82deff, type: 3}
   mainBoosterParticles: {fileID: 1773266832152042558}
   leftBoosterParticles: {fileID: 2716520536928278776}
